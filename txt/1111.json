@@ -1,0 +1,133 @@
+{
+
+  "fiscRet":[
+    {
+      "artCode":1048,
+      "articId":48,
+      "articName":"Тариф 1",
+      "money":42.75,
+      "nds":7.13
+    },
+    {
+      "artCode":3049,
+      "articId":49,
+      "articName":"Багаж 1",
+      "money":5.7,
+      "nds":0.95
+    },
+    {
+      "artCode":4066,
+      "articId":66,
+      "articName":"Багаж 2",
+      "money":51.3,
+      "nds":""
+    },
+    {
+      "artCode":6067,
+      "articId":67,
+      "articName":"Тариф 2",
+      "money":384.75,
+      "nds":""
+    }
+  ],
+  "percId":75,
+  "percName":"75%",
+  "retNum":"в6418050000271833",
+  "sumHold":"142.50",
+  "sumRet":"484.50",
+
+
+  "ticket":
+  {
+    "ticketNum": 67101,
+    "ticketId": "67101",
+    "raceNum": 333,
+    "raceName": "Луцьк - Львів",
+    "stFromId": 667,
+    "stDepAddr": "вул.Конякіна,39",
+    "stDepName": "Луцьк АС(Зал. вок.)",
+    "stToId": 169,
+    "stArrName": "Львів АС-8",
+    "stArrAddr": "",
+    "dateArr": "02.05.2020",
+    "timeArr": "21:50",
+    "dateDep": "02.05.2020",
+    "timeDep": "18:10",
+    "carrierAddr": "",
+    "carrierName": "Луцьк АТП-1",
+    "carrierPhone": "",
+    "insurAddr": " м. Луцьк вул. Зв’язківців, 1Б ",
+    "insurName": " ПАТ Страхова компанія 'КРАЇНА'",
+    "insurPhone": "0-800-500-467",
+    "providerInfo": {
+      "contrDate": "2020-01-01",
+      "edrpou": "03113130",
+      "contrFinish": "",
+      "contrId": 112,
+      "contrNum": "01/01/20-ас",
+      "contrStart": "2020-01-01",
+      "id": 1201,
+      "name": "ПРАТ ВОПАС"
+    },
+    "busName": " МЕРСЕДЕС-БЕНЦ  614",
+    "place": 10,
+    "fio": "Філіпчук Сергій",
+    "name": "Сергій",
+    "lastName": "Філіпчук",
+    "phone": "+38 (050) 696 08 96",
+    "email": "example@tukr.net",
+    "discType": "ПОВНИЙ",
+    "discount": 0,
+    "retCond": [
+      "більше 24 год. до відправлення – без комісії АС",
+      "від 24 год. до 5 год. до відправлення – без комісії АС та -10% від тарифу    поїздки",
+      "менше 5 год. до відправлення - кошти за поїздку не повертаються"
+    ],
+    "brand": {
+      "addr": "м. Луцьк, вул. Львівська 148",
+      "bank": "2426358562982356294876",
+      "brand": "",
+      "edrpou": "03113130",
+      "email": [
+        "info@mail.ua"
+      ],
+      "org": "ПрАТ ВОПАС",
+      "phones": [
+        {
+          "number": "+38 (050) 333 22 55",
+          "telegram": 0,
+          "viber": 0,
+          "watsapp": 0
+        },
+        {
+          "number": "+38 (067) 444 95 25",
+          "telegram": 0,
+          "viber": 0,
+          "watsapp": 0
+        }
+      ],
+      "site": "http://test.com.ua"
+    },
+    "tariffs": [
+      {
+        "suma": 100.00,
+        "name": "Тариф"
+      },
+      {
+        "suma": 10.00,
+        "name": "Станційний збір"
+      },
+      {
+        "suma": 0.25,
+        "name": "Страховий збір"
+      }
+
+    ],
+    "status_id": "init",
+    "status_text": ""
+  }
+
+
+
+
+}

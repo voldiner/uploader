@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Event event="PC">
+    <Ident ByOperator="irinaadmin"
+           ByOperatorName="Коваленко"
+           ByStationCode="Коваленко"
+           ByStationName="АС Луцьк"
+           ByService="vopas"
+           CarrierCode="103"
+           CarrierName="ПП Яцишин"
+           FileName=""
+           Group=""
+           LinkStationCode=""
+           NameRoute="Луцьк-Львiв"
+           NumberRoute="3330600"
+           IdRoute="3330600"
+           Platform=""
+           Stamp=""
+           TimeStamp="2021-06-09 14:39:08"
+           ConnectionCode=""
+           event="PC">11
+    </Ident>
+</Event>
