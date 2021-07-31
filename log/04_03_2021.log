@@ -1,0 +1,242 @@
+process starting ...04 03 2021 09:15:33
+
+BAZV.NTX успешно загружен на сервер
+ Невідома помилка запуску скрипта https://www.vopas.com.ua/module/vD4lsIqNd9.php04 03 2021 09:16:04
+process shutdown manually...04 03 2021 09:17:02
+
+process starting ...04 03 2021 09:17:43
+
+BAZV.NTX успешно загружен на сервер
+ Невідома помилка запуску скрипта https://www.vopas.com.ua/module/vD4lsIqNd9.php04 03 2021 09:18:13
+process shutdown manually...04 03 2021 09:18:31
+
+process starting ...04 03 2021 09:18:45
+
+BAZV.NTX успешно загружен на сервер
+process shutdown manually...04 03 2021 09:19:15
+
+process starting ...04 03 2021 09:20:45
+
+BAZV.NTX успешно загружен на сервер
+process shutdown manually...04 03 2021 09:21:03
+
+process starting ...04 03 2021 09:25:27
+
+BAZV.NTX успешно загружен на сервер
+process shutdown manually...04 03 2021 09:25:52
+
+process starting ...04 03 2021 09:26:00
+
+ ** WARNING: ftp_put(): Type set to I. 
+ ** File: E:\OSPanel\domains\uploader\functions.php:37
+ ** 04 03 2021 09:26:30
+
+ошибка загрузки на сервер файл BAZV.NTX
+process shutdown manually...04 03 2021 09:26:51
+
+process starting ...04 03 2021 09:28:27
+
+BAZV.NTX успешно загружен на сервер
+process shutdown manually...04 03 2021 09:28:31
+
+process starting ...04 03 2021 09:29:55
+
+ ** NOTICE: Undefined variable: ch 
+ ** File: E:\OSPanel\domains\uploader\index.php:76
+ ** 04 03 2021 09:29:55
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** File: E:\OSPanel\domains\uploader\index.php:76
+ ** 04 03 2021 09:29:55
+
+ ** NOTICE: Undefined variable: ch 
+ ** File: E:\OSPanel\domains\uploader\index.php:77
+ ** 04 03 2021 09:29:55
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** File: E:\OSPanel\domains\uploader\index.php:77
+ ** 04 03 2021 09:29:55
+
+BAZV.NTX успешно загружен на сервер
+process shutdown manually...04 03 2021 09:29:59
+
+process starting ...04 03 2021 09:30:06
+
+ ** NOTICE: Undefined variable: ch 
+ ** File: E:\OSPanel\domains\uploader\index.php:76
+ ** 04 03 2021 09:30:06
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** File: E:\OSPanel\domains\uploader\index.php:76
+ ** 04 03 2021 09:30:06
+
+ ** NOTICE: Undefined variable: ch 
+ ** File: E:\OSPanel\domains\uploader\index.php:77
+ ** 04 03 2021 09:30:06
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** File: E:\OSPanel\domains\uploader\index.php:77
+ ** 04 03 2021 09:30:06
+
+BAZV.NTX успешно загружен на сервер
+process shutdown manually...04 03 2021 09:30:12
+
+process starting ...04 03 2021 09:30:44
+
+ ** NOTICE: Undefined variable: ch 
+ ** File: E:\OSPanel\domains\uploader\index.php:76
+ ** 04 03 2021 09:30:44
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** File: E:\OSPanel\domains\uploader\index.php:76
+ ** 04 03 2021 09:30:44
+
+ ** NOTICE: Undefined variable: ch 
+ ** File: E:\OSPanel\domains\uploader\index.php:77
+ ** 04 03 2021 09:30:44
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** File: E:\OSPanel\domains\uploader\index.php:77
+ ** 04 03 2021 09:30:44
+
+BAZV.NTX успешно загружен на сервер
+process shutdown manually...04 03 2021 09:31:24
+
+process starting ...04 03 2021 09:33:24
+
+BAZV.NTX успешно загружен на сервер
+process shutdown manually...04 03 2021 09:34:07
+
+process starting ...04 03 2021 09:35:34
+
+BAZV.NTX успешно загружен на сервер
+process shutdown manually...04 03 2021 09:35:47
+
+process starting ...04 03 2021 09:37:27
+
+BAZV.NTX успешно загружен на сервер
+process shutdown manually...04 03 2021 09:38:26
+
+process starting ...04 03 2021 09:39:23
+
+BAZV.NTX успешно загружен на сервер
+Помилка запуску скрипта https://www.vopas.com.ua/module/vD4lsIqNd9.php -> No file 04 03 2021 09:40:32
+process shutdown manually...04 03 2021 09:41:00
+
+process starting ...04 03 2021 09:41:47
+
+BAZV.NTX успешно загружен на сервер
+process shutdown manually...04 03 2021 09:43:15
+
+process starting ...04 03 2021 09:59:54
+
+ ** WARNING: ftp_put(): Could not create file. 
+ ** File: E:\OSPanel\domains\uploader\functions.php:37
+ ** 04 03 2021 10:00:09
+
+ошибка загрузки на сервер файл UPLOAD.DBF
+process shutdown manually...04 03 2021 10:00:37
+
+process starting ...04 03 2021 10:02:35
+
+UPLOAD.DBF успешно загружен на сервер
+process shutdown manually...04 03 2021 10:03:17
+
+process starting ...04 03 2021 10:04:50
+
+UPLOAD.DBF успешно загружен на сервер
+Успішний запуск скрипта https://www.vopas.com.ua/module/vD4lsIqNd9.php 04 03 2021 10:05:12
+ ** WARNING: ftp_put(f:\vopas\test1\UPLOAD.DBF): failed to open stream: Resource temporarily unavailable 
+ ** File: E:\OSPanel\domains\uploader\functions.php:37
+ ** 04 03 2021 10:08:28
+
+ошибка загрузки на сервер файл UPLOAD.DBF
+ ** WARNING: copy(f:\vopas\test1\UPLOAD.DBF): failed to open stream: Resource temporarily unavailable 
+ ** File: E:\OSPanel\domains\uploader\functions.php:25
+ ** 04 03 2021 10:08:28
+
+Помилка запуску скрипта https://www.vopas.com.ua/module/vD4lsIqNd9.php -> No file 04 03 2021 10:08:28
+ ** WARNING: copy(f:\vopas\test1\UPLOAD.DBF): failed to open stream: Resource temporarily unavailable 
+ ** File: E:\OSPanel\domains\uploader\functions.php:25
+ ** 04 03 2021 10:08:28
+
+ ** WARNING: unlink(f:\vopas\test1\UPLOAD.DBF): Resource temporarily unavailable 
+ ** File: E:\OSPanel\domains\uploader\index.php:149
+ ** 04 03 2021 10:08:28
+
+UPLOAD.DBF успешно загружен на сервер
+Успішний запуск скрипта https://www.vopas.com.ua/module/vD4lsIqNd9.php 04 03 2021 10:08:40
+ ** WARNING: ftp_put(f:\vopas\test1\UPLOAD.DBF): failed to open stream: Resource temporarily unavailable 
+ ** File: E:\OSPanel\domains\uploader\functions.php:37
+ ** 04 03 2021 10:20:02
+
+ошибка загрузки на сервер файл UPLOAD.DBF
+ ** WARNING: copy(f:\vopas\test1\UPLOAD.DBF): failed to open stream: Resource temporarily unavailable 
+ ** File: E:\OSPanel\domains\uploader\functions.php:25
+ ** 04 03 2021 10:20:02
+
+Помилка запуску скрипта https://www.vopas.com.ua/module/vD4lsIqNd9.php -> No file 04 03 2021 10:20:02
+ ** WARNING: copy(f:\vopas\test1\UPLOAD.DBF): failed to open stream: Resource temporarily unavailable 
+ ** File: E:\OSPanel\domains\uploader\functions.php:25
+ ** 04 03 2021 10:20:02
+
+ ** WARNING: unlink(f:\vopas\test1\UPLOAD.DBF): Resource temporarily unavailable 
+ ** File: E:\OSPanel\domains\uploader\index.php:149
+ ** 04 03 2021 10:20:02
+
+ ** WARNING: ftp_put(f:\vopas\test1\UPLOAD.DBF): failed to open stream: No such file or directory 
+ ** File: E:\OSPanel\domains\uploader\functions.php:37
+ ** 04 03 2021 10:20:12
+
+ошибка загрузки на сервер файл UPLOAD.DBF
+ ** WARNING: copy(f:\vopas\test1\UPLOAD.DBF): failed to open stream: No such file or directory 
+ ** File: E:\OSPanel\domains\uploader\functions.php:25
+ ** 04 03 2021 10:20:12
+
+Помилка запуску скрипта https://www.vopas.com.ua/module/vD4lsIqNd9.php -> No file 04 03 2021 10:20:12
+ ** WARNING: copy(f:\vopas\test1\UPLOAD.DBF): failed to open stream: No such file or directory 
+ ** File: E:\OSPanel\domains\uploader\functions.php:25
+ ** 04 03 2021 10:20:12
+
+ ** WARNING: unlink(f:\vopas\test1\UPLOAD.DBF): No such file or directory 
+ ** File: E:\OSPanel\domains\uploader\index.php:149
+ ** 04 03 2021 10:20:12
+
+process shutdown manually...04 03 2021 10:20:34
+
+process starting ...04 03 2021 10:20:49
+
+UPLOAD.DBF успешно загружен на сервер
+Успішний запуск скрипта https://www.vopas.com.ua/module/vD4lsIqNd9.php 04 03 2021 10:21:45
+process shutdown manually...04 03 2021 10:22:19
+
+process starting ...04 03 2021 10:23:26
+
+UPLOAD.DBF успешно загружен на сервер
+Успішний запуск скрипта https://www.vopas.com.ua/module/vD4lsIqNd9.php 04 03 2021 10:24:35
+UPLOAD.DBF успешно загружен на сервер
+Успішний запуск скрипта https://www.vopas.com.ua/module/vD4lsIqNd9.php 04 03 2021 10:33:21
+UPLOAD.DBF успешно загружен на сервер
+Успішний запуск скрипта https://www.vopas.com.ua/module/vD4lsIqNd9.php 04 03 2021 11:10:55
+process shutdown manually...04 03 2021 11:30:50
+
+process starting ...04 03 2021 11:44:12
+
+ ** WARNING: ftp_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  
+ ** File: E:\OSPanel\domains\uploader\functions.php:32
+ ** 04 03 2021 11:44:58
+
+Error ftp_connect s1.ho.ua1
+ ** WARNING: ftp_connect(): php_network_getaddresses: getaddrinfo failed: ���� ���� ����������.  
+ ** File: E:\OSPanel\domains\uploader\functions.php:32
+ ** 04 03 2021 11:46:28
+
+Error ftp_connect s1.ho.ua1
+process shutdown manually...04 03 2021 11:46:40
+
+process starting ...04 03 2021 11:46:47
+
+01012021.238 успешно загружен на сервер
+Помилка запуску скрипта https://www.vopas.com.ua/module/vD4lsIqNd9.php -> No file 04 03 2021 11:47:25
+process shutdown manually...04 03 2021 11:51:39
+

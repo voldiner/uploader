@@ -1,0 +1,69 @@
+process starting ...11 06 2021 09:40:23
+
+ ** process shutdown error...
+ ** COMPILE_ERROR: 'continue' not in the 'loop' or 'switch' context 
+ ** File: E:\OSPanel\domains\uploader\include\stopSale.php:44
+ ** 11 06 2021 09:40:25
+
+process starting ...11 06 2021 09:41:12
+
+process shutdown manually...11 06 2021 09:41:15
+
+process starting ...11 06 2021 09:41:40
+
+process shutdown manually...11 06 2021 09:41:42
+
+process starting ...11 06 2021 16:24:51
+
+ ** NOTICE: Undefined variable: result 
+ ** 11 06 2021 16:24:53
+
+Помилка запуску скрипта http://uploader/sendMail.php error json_decode file -> f:\vopas\email\email.txt 11 06 2021 16:24:53
+ ** NOTICE: Undefined variable: result 
+ ** 11 06 2021 16:26:01
+
+Помилка запуску скрипта http://uploader/sendMail.php error json_decode file -> f:\vopas\email\email.txt 11 06 2021 16:26:01
+process shutdown manually...11 06 2021 16:26:41
+
+process starting ...11 06 2021 16:30:30
+
+ ** NOTICE: Undefined variable: text_msg 
+ ** 11 06 2021 16:30:45
+
+process shutdown manually...11 06 2021 16:30:45
+
+process starting ...11 06 2021 16:31:28
+
+ ** NOTICE: Undefined variable: text_msg 
+ ** 11 06 2021 16:31:31
+
+process shutdown manually...11 06 2021 16:31:31
+
+process starting ...11 06 2021 16:31:44
+
+ ** NOTICE: Undefined variable: text_msg 
+ ** 11 06 2021 16:31:47
+
+ ** NOTICE: Undefined variable: result 
+ ** 11 06 2021 16:31:47
+
+ ** NOTICE: Undefined variable: result 
+ ** 11 06 2021 16:31:47
+
+Успішний запуск скрипта http://uploader/sendMail.php 11 06 2021 16:31:47
+ ** NOTICE: Undefined variable: result 
+ ** 11 06 2021 16:32:08
+
+Помилка запуску скрипта http://uploader/sendMail.php error json_decode file -> f:\vopas\email\email.txt 11 06 2021 16:32:08
+ ** NOTICE: Undefined variable: text_msg 
+ ** 11 06 2021 16:32:37
+
+ ** NOTICE: Undefined variable: result 
+ ** 11 06 2021 16:32:37
+
+ ** NOTICE: Undefined variable: result 
+ ** 11 06 2021 16:32:37
+
+Успішний запуск скрипта http://uploader/sendMail.php 11 06 2021 16:32:37
+process shutdown manually...11 06 2021 16:33:37
+

@@ -1,0 +1,171 @@
+process starting ...09 06 2021 09:29:45
+
+process shutdown manually...09 06 2021 09:29:48
+
+process starting ...09 06 2021 09:30:04
+
+process shutdown manually...09 06 2021 09:30:06
+
+process starting ...09 06 2021 09:30:34
+
+process shutdown manually...09 06 2021 09:30:36
+
+process starting ...09 06 2021 09:32:33
+
+ ** NOTICE: Undefined variable: curlMega 
+ ** 09 06 2021 09:32:35
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** 09 06 2021 09:32:35
+
+process shutdown manually...09 06 2021 09:32:35
+
+process starting ...09 06 2021 09:33:23
+
+ ** NOTICE: Undefined variable: curlMega 
+ ** 09 06 2021 09:33:25
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** 09 06 2021 09:33:25
+
+process shutdown manually...09 06 2021 09:33:26
+
+process starting ...09 06 2021 09:35:05
+
+ ** NOTICE: Undefined variable: curlMega 
+ ** 09 06 2021 09:35:07
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** 09 06 2021 09:35:07
+
+process shutdown manually...09 06 2021 09:35:07
+
+process starting ...09 06 2021 09:36:18
+
+ ** NOTICE: Undefined variable: curlMega 
+ ** 09 06 2021 09:36:20
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** 09 06 2021 09:36:20
+
+process shutdown manually...09 06 2021 09:36:20
+
+process starting ...09 06 2021 09:43:52
+
+process shutdown manually...09 06 2021 09:43:54
+
+process starting ...09 06 2021 09:44:04
+
+process shutdown manually...09 06 2021 09:44:07
+
+process starting ...09 06 2021 09:47:43
+
+ ** NOTICE: Undefined variable: curlMega 
+ ** 09 06 2021 09:47:45
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** 09 06 2021 09:47:45
+
+ ** NOTICE: Array to string conversion 
+ ** 09 06 2021 09:47:45
+
+process shutdown manually...09 06 2021 09:47:45
+
+process starting ...09 06 2021 09:48:08
+
+ ** NOTICE: Undefined variable: curlMega 
+ ** 09 06 2021 09:48:10
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** 09 06 2021 09:48:10
+
+ ** NOTICE: Array to string conversion 
+ ** 09 06 2021 09:48:10
+
+process shutdown manually...09 06 2021 09:48:11
+
+process starting ...09 06 2021 09:48:34
+
+ ** NOTICE: Undefined variable: curlMega 
+ ** 09 06 2021 09:48:36
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** 09 06 2021 09:48:36
+
+ ** NOTICE: Array to string conversion 
+ ** 09 06 2021 09:48:36
+
+process shutdown manually...09 06 2021 09:48:36
+
+process starting ...09 06 2021 09:54:45
+
+ ** NOTICE: Undefined variable: curlMega 
+ ** 09 06 2021 09:54:47
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** 09 06 2021 09:54:47
+
+process shutdown manually...09 06 2021 09:54:47
+
+process starting ...09 06 2021 09:56:37
+
+ ** NOTICE: Undefined variable: curlMega 
+ ** 09 06 2021 09:56:39
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** 09 06 2021 09:56:39
+
+process shutdown manually...09 06 2021 09:56:39
+
+process starting ...09 06 2021 09:56:56
+
+ ** NOTICE: Undefined variable: curlMega 
+ ** 09 06 2021 09:56:58
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** 09 06 2021 09:56:58
+
+process shutdown manually...09 06 2021 09:56:58
+
+process starting ...09 06 2021 09:57:23
+
+ ** NOTICE: Undefined variable: curlMega 
+ ** 09 06 2021 09:57:25
+
+ ** WARNING: curl_setopt() expects parameter 1 to be resource, null given 
+ ** 09 06 2021 09:57:25
+
+process shutdown manually...09 06 2021 09:57:25
+
+process starting ...09 06 2021 10:00:24
+
+process shutdown manually...09 06 2021 10:00:26
+
+process starting ...09 06 2021 10:07:05
+
+process shutdown manually...09 06 2021 10:07:07
+
+process starting ...09 06 2021 10:15:04
+
+process shutdown manually...09 06 2021 10:15:06
+
+process starting ...09 06 2021 10:15:20
+
+process shutdown manually...09 06 2021 10:15:22
+
+process starting ...09 06 2021 10:16:06
+
+process shutdown manually...09 06 2021 10:16:08
+
+process starting ...09 06 2021 15:50:55
+
+process shutdown manually...09 06 2021 15:50:58
+
+process starting ...09 06 2021 15:51:54
+
+Успішний запуск скрипта http://uploader/sendMail.php 09 06 2021 15:52:15
+ ** WARNING: unlink(f:\vopas\email\email.txt): No such file or directory 
+ ** 09 06 2021 15:52:15
+
+process shutdown manually...09 06 2021 15:53:01
+
