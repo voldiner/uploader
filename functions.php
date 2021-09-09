@@ -1,18 +1,5 @@
 <?php
-//function check_upload_data($kol_day,$from_ac,$to_ac='Луцьк'){
-//    global $pattern;
-//    $result = '';
-//    for ($i=1; $i<=$kol_day;$i++){
-//        $date_for_get =  date('d.m.Y',strtotime("+$i day"));
-//        $subject = file_get_contents("https://www.vopas.com.com.ua/search/?from=$from_ac&to=$to_ac&date=$date_for_get&time=00+%3A+00");
-//        if (preg_match($pattern,$subject)){
-//            $result .= $date_for_get.' - data is out!! <br>';
-//        }else{
-//            $result .= $date_for_get.' - Data upload success!! <br>';
-//        }
-//    }
-//    return $result;
-//}
+
 function megalog($toSend)
 {
     //$url = 'http://megalog/api/posts/add';
@@ -90,9 +77,9 @@ function transfer_ftp($folder){
 function shutdown()
 {
     $fileError = __DIR__.'\pid.txt';
-    //dd($filename);
+
     $error = error_get_last();
-    //echo $error['type'];
+
     if (isset($error['type']) & in_array($error['type'], [E_ERROR, E_PARSE, E_COMPILE_ERROR, E_CORE_ERROR])){
 
         $data = ' ** process shutdown error...'.PHP_EOL;
@@ -112,7 +99,6 @@ function shutdown()
     // перед тем как скрипт полностью завершится.
     // використати константу __DIR__ бо може змінитися поточна директорія
     // виводити echo не можна - не буде працювати в нових версіях вроді виправлено
-    //unlink('pid.txt');
     //echo 'Скрипт успешно завершился', PHP_EOL;
 }
 function getErrorForCode($code){
@@ -165,39 +151,17 @@ function array_to_lover(&$item1, $key)
 {
     $item1 = strtolower($item1);
 }
-//function ping($host, $port, $timeout) {
-//Echoing it will display the ping if the host is up, if not it'll say "down".
-//    $tB = microtime(true);
-//    $fP = fSockOpen($host, $port, $errno, $errstr, $timeout);
-//    if (!$fP) { return "down"; }
-//    $tA = microtime(true);
-//    return round((($tA - $tB) * 1000), 0)." ms";
-//}
+
 // наш обработчик ошибок
 function myHandler($level, $message, $file, $line, $context) {
-    //global $filelog;
-    //echo '1';
-    // в зависимости от типа ошибки формируем заголовок сообщения
-//    switch ($level) {
-//        case E_WARNING:
-//            $type = 'Warning';
-//            break;
-//        case E_NOTICE:
-//            $type = 'Notice';
-//            break;
-//            default;
-//            // это не E_WARNING и не E_NOTICE
-//            // значит мы прекращаем обработку ошибки
-//            // далее обработка ложится на сам PHP
-//            return false;
-//    }
+
     // выводим текст ошибки  в лог
     $data = " ** ".getErrorForCode($level).": $message ".PHP_EOL;
     //$data .= " ** File: $file:$line".PHP_EOL;
     $data .= ' ** '. date('d m Y H:i:s') . PHP_EOL;
     saveToLog($data);
     // сообщаем, что мы обработали ошибку, и дальнейшая обработка не требуется - return true
-    return true; // передаем на обработку php
+    return true;
 }
 /*
     * функции перевода смс в транслит

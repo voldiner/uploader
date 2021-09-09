@@ -17,12 +17,11 @@ $folders = require 'config\config.php';
 // ------- check if process steel running ------ //
 if (file_exists('pid.txt')) {
     $content_pid = file_get_contents('pid.txt');
-    //dd($content_pid);
+
     if ($content_pid && is_numeric($content_pid)) {
-        //dump(time()-$content_pid);
+
         if (time() - $content_pid < TIME_TO_RUN) {
             if (IS_ECHO) echo 'end ...process steel running <br />';
-            //dd('error time');
             exit();
         }
     } else {
