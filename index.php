@@ -1,27 +1,29 @@
 <?php
 error_reporting(E_ALL);
 //--------- для отладки ------------------------
-require '../vendor/autoload.php';
-require 'handler.php';
+//require '../vendor/autoload.php';
+//require 'handler.php';
 // ---------- параметри константи --------------
 ini_set('display_errors', 'on');
 define("IS_ECHO", true);          // вивід повідомлень в браузер
-define("TIME_TO_RUN", 10);        // час в сек. якщо скрипт не оновлював мітку, то вважаемо що він не працює
+define("TIME_TO_RUN", 3);        // час в сек. якщо скрипт не оновлював мітку, то вважаемо що він не працює
 define("TIME_PAUSE", 2);        // час в сек. через який буде здійснюватися сканування катаогів
-define("NUMBER_CYCLE_TO_SEND", 2);        // 15 кількість пустих циклів до відправки 1 -> негайна відправка
+define("NUMBER_CYCLE_TO_SEND", 5);        // 15 кількість пустих циклів до відправки 1 -> негайна відправка
 define("STATION", 3);
 
 $folders = require 'config\config.php';
-
+$fp = null;
 //----------------------------------------------
 // ------- check if process steel running ------ //
+// for test exclusive
 if (file_exists('pid.txt')) {
     $content_pid = file_get_contents('pid.txt');
-
+    //dd($content_pid);
     if ($content_pid && is_numeric($content_pid)) {
-
+        //dump(time()-$content_pid);
         if (time() - $content_pid < TIME_TO_RUN) {
             if (IS_ECHO) echo 'end ...process steel running <br />';
+            //dd('error time');
             exit();
         }
     } else {
@@ -30,25 +32,47 @@ if (file_exists('pid.txt')) {
         //exit();
     }
 }
-
+// for test exclusive
 //------- починаємо роботу ------------------------
 require 'functions.php';
+// -------------------------------------------
+// for test exclusive
+/*if (!check_pid()){
+    if (IS_ECHO) echo 'end ...process steel running <br />';
+    exit();
+}*/
+
+// for test exclusive
 //include 'errors.php';  // for testing error handler
 ignore_user_abort(true);
 
 register_shutdown_function('shutdown');
 set_error_handler('myHandler');
 
-file_put_contents('pid.txt', time());
+file_put_contents('pid.txt', time()); // for test exclusive
 file_put_contents('stop.txt', 'delete for stop script !!!');
 $data = 'process starting ...' . date('d m Y H:i:s') . PHP_EOL;
+
 saveToLog($data);
+// ---- повідомлення про старт скрипта
+$toSend = [
+    'result' => 0,
+    'files' => ['start.txt'],
+    'error' => 'Starting script ...',
+    'category_id' => 5,
+    'alias' =>  'start',
+    'station_id' => STATION,
+    'login' => 'voldiner@ukr.net',
+    'password' => '%NVBw2I/pSLkcCq>?',
+];
+megalog($toSend);
 
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
 $vivod = 1;
 $col = 1;
+$filesUnlink = [];  // масив файлів, які не вдалося видалити після відпрацювання.Вони не підлягають повторній обробці
 
 if (IS_ECHO) echo 'Begin ...<br />';
 
@@ -95,9 +119,10 @@ while (true) {
                 // ----- і скрипт не будемо запускати
                 copyToFailed($folder);
                 // ----- видалим файли
-                foreach ($folder['files'] as $file) {
-                    unlink($folder['name_folder'] . $file);
-                }
+//                foreach ($folder['files'] as $file) {
+//                    unlink($folder['name_folder'] . $file);
+//                }
+                deleteFiles($folder);
                 // ----- повідомимо на megalog ------- //
                 // ---- запишемо тільки першу помилку в megalog ------ //
                 $toSend = [
@@ -137,7 +162,7 @@ while (true) {
                      'result' => 0,
                      'files' => $folder['files'],
                      'error' => $textError,
-                     'categoty_id' => 3,
+                     'category_id' => 3,
                      'alias' => $folder['alias'],
                      'station_id' => STATION,
                      'login' => 'vold',
@@ -153,13 +178,14 @@ while (true) {
                      'result' => 0,
                      'files' => $folder['files'],
                      'error' => $textError,
-                     'categoty_id' => 3,
+                     'category_id' => 3,
                      'alias' => $folder['alias'],
                      'station_id' => STATION,
                      'login' => 'vold',
                      'password' => 'vold',
                  ];
                  megalog($toSend);
+                 unset($text_msg);
              } elseif (in_array($result, $folder['errors'])) {
                  $textError = "Помилка запуску скрипта {$folder['uri']} -> $result ";
                  saveToLog( $textError . date('d m Y H:i:s'));
@@ -169,7 +195,7 @@ while (true) {
                      'result' => 0,
                      'files' =>  $folder['files'],
                      'error' => $textError,
-                     'categoty_id' => 3,
+                     'category_id' => 3,
                      'alias' =>  $folder['alias'],
                      'station_id' => STATION,
                      'login' => 'vold',
@@ -198,9 +224,10 @@ while (true) {
              }
             // ----- після відпрвки не забути видалити відправлені файли -----
 
-            foreach ($folder['files'] as $file) {
-                unlink($folder['name_folder'] . $file);
-            }
+//            foreach ($folder['files'] as $file) {
+//                unlink($folder['name_folder'] . $file);
+//            }
+            deleteFiles($folder);
 
             // ----- обнуляємо лічильник
             $folder['count_to_send'] = 0;
@@ -218,9 +245,12 @@ while (true) {
     if (IS_ECHO) flush();
     //ob_flush();
     sleep(TIME_PAUSE);
+    // for test exclusive
     file_put_contents('pid.txt', time());
+    //update_pid();
 }
 $my_error = false;
+//close_pid();
 if (IS_ECHO) echo 'stop';
 
 

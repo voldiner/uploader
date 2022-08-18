@@ -1,5 +1,18 @@
 <?php
-
+//function check_upload_data($kol_day,$from_ac,$to_ac='Луцьк'){
+//    global $pattern;
+//    $result = '';
+//    for ($i=1; $i<=$kol_day;$i++){
+//        $date_for_get =  date('d.m.Y',strtotime("+$i day"));
+//        $subject = file_get_contents("https://www.vopas.com.com.ua/search/?from=$from_ac&to=$to_ac&date=$date_for_get&time=00+%3A+00");
+//        if (preg_match($pattern,$subject)){
+//            $result .= $date_for_get.' - data is out!! <br>';
+//        }else{
+//            $result .= $date_for_get.' - Data upload success!! <br>';
+//        }
+//    }
+//    return $result;
+//}
 function megalog($toSend)
 {
     //$url = 'http://megalog/api/posts/add';
@@ -18,32 +31,37 @@ function megalog($toSend)
 }
 
 
-function saveToLog($content){
-    $filelog = __DIR__.'\log\\'.date('d_m_Y').'.log';
+function saveToLog($content)
+{
+    $filelog = __DIR__ . '\log\\' . date('d_m_Y') . '.log';
     $content .= PHP_EOL;
-    file_put_contents($filelog,$content,FILE_APPEND);
+    file_put_contents($filelog, $content, FILE_APPEND);
 }
 
-function copyToFailed($folder){
-    if ($folder['copyToFail']){
+function copyToFailed($folder)
+{
+    if ($folder['copyToFail']) {
         foreach ($folder['files'] as $file) {
-            copy($folder['name_folder'] . $file, 'failed\\' .date('d_m_Y'). '_'. mt_rand(1,1000). $file);
+            copy($folder['name_folder'] . $file, 'failed\\' . date('d_m_Y') . '_' . mt_rand(1, 1000) . $file);
         }
     }
 }
-function copyToArchive($folder){
+
+function copyToArchive($folder)
+{
     $dateTime = $folder['copy_folder_data_time'] ? date('d_m_Y_H_i_s') : '';
-    if ($folder['copy_folder']){
+    if ($folder['copy_folder']) {
         foreach ($folder['files'] as $file) {
             copy($folder['name_folder'] . $file, $folder['copy_folder'] . $dateTime . $file);
         }
     }
 }
 
-function transfer_ftp($folder){
+function transfer_ftp($folder)
+{
     //dump($folder);
     $ftp_errors = [];
-    if ($folder['ftp_hostname'] === false){
+    if ($folder['ftp_hostname'] === false) {
         return $ftp_errors;
     }
     $connect = ftp_connect($folder['ftp_hostname']);
@@ -63,7 +81,7 @@ function transfer_ftp($folder){
                 }
             }
         } else {
-            $ftp_errors[]= "login error {$folder['ftp_login']} -> {$folder['ftp_password']}";
+            $ftp_errors[] = "login error {$folder['ftp_login']} -> {$folder['ftp_password']}";
         }
         ftp_close($connect);
     } else {
@@ -76,19 +94,19 @@ function transfer_ftp($folder){
 
 function shutdown()
 {
-    $fileError = __DIR__.'\pid.txt';
-
+    $fileError = __DIR__ . '\pid.txt';
+    //dd($filename);
     $error = error_get_last();
+    //echo $error['type'];
+    if (isset($error['type']) & in_array($error['type'], [E_ERROR, E_PARSE, E_COMPILE_ERROR, E_CORE_ERROR])) {
 
-    if (isset($error['type']) & in_array($error['type'], [E_ERROR, E_PARSE, E_COMPILE_ERROR, E_CORE_ERROR])){
-
-        $data = ' ** process shutdown error...'.PHP_EOL;
+        $data = ' ** process shutdown error...' . PHP_EOL;
         // выводим текст ошибки  в лог
-        $data .= " ** ".getErrorForCode($error['type']).": {$error['message']} ".PHP_EOL;
-        $data .= " ** File: {$error['file']}:{$error['line']}".PHP_EOL;
-        $data .= ' ** '. date('d m Y H:i:s') . PHP_EOL;
+        $data .= " ** " . getErrorForCode($error['type']) . ": {$error['message']} " . PHP_EOL;
+        $data .= " ** File: {$error['file']}:{$error['line']}" . PHP_EOL;
+        $data .= ' ** ' . date('d m Y H:i:s') . PHP_EOL;
         unlink($fileError);
-    }else{
+    } else {
         $data = 'process shutdown manually...' . date('d m Y H:i:s') . PHP_EOL;
     }
     saveToLog($data);
@@ -99,70 +117,101 @@ function shutdown()
     // перед тем как скрипт полностью завершится.
     // використати константу __DIR__ бо може змінитися поточна директорія
     // виводити echo не можна - не буде працювати в нових версіях вроді виправлено
+    //unlink('pid.txt');
     //echo 'Скрипт успешно завершился', PHP_EOL;
 }
-function getErrorForCode($code){
+
+function getErrorForCode($code)
+{
     $errors = [
-        E_ERROR             => 'ERROR',
-        E_WARNING           => 'WARNING',
-        E_PARSE             => 'PARSE',
-        E_NOTICE            => 'NOTICE',
-        E_CORE_ERROR        => 'CORE_ERROR',
-        E_CORE_WARNING      => 'CORE_WARNING',
-        E_COMPILE_ERROR     => 'COMPILE_ERROR',
-        E_COMPILE_WARNING   => 'COMPILE_WARNING',
-        E_USER_ERROR        => 'USER_ERROR',
-        E_USER_WARNING      => 'USER_WARNING',
-        E_USER_NOTICE       => 'USER_NOTICE',
-        E_STRICT            => 'STRICT',
+        E_ERROR => 'ERROR',
+        E_WARNING => 'WARNING',
+        E_PARSE => 'PARSE',
+        E_NOTICE => 'NOTICE',
+        E_CORE_ERROR => 'CORE_ERROR',
+        E_CORE_WARNING => 'CORE_WARNING',
+        E_COMPILE_ERROR => 'COMPILE_ERROR',
+        E_COMPILE_WARNING => 'COMPILE_WARNING',
+        E_USER_ERROR => 'USER_ERROR',
+        E_USER_WARNING => 'USER_WARNING',
+        E_USER_NOTICE => 'USER_NOTICE',
+        E_STRICT => 'STRICT',
         E_RECOVERABLE_ERROR => 'RECOVERABLE_ERROR',
-        E_DEPRECATED        => 'DEPRECATED',
-        E_USER_DEPRECATED   => 'USER_DEPRECATED',
+        E_DEPRECATED => 'DEPRECATED',
+        E_USER_DEPRECATED => 'USER_DEPRECATED',
     ];
-    if(array_key_exists($code, $errors)){
+    if (array_key_exists($code, $errors)) {
         return $errors[$code];
     }
     return 'not found error';
 }
-function parser(){
+
+function parser()
+{
     // вертає array якщо файл пропарсений і записаний в масив
     // або false якщо парсинг не вдався
     // прочитати файл (file())- перевірити останній символ @ і відрізати його
     // розпарсити кожен елемент масиву
     //
-    $content = file('from_pc.txt',FILE_IGNORE_NEW_LINES);
+    $content = file('from_pc.txt', FILE_IGNORE_NEW_LINES);
 
-    if (!is_array($content) && $content === false){
+    if (!is_array($content) && $content === false) {
         return false;
     }
-    if ($content[count($content)-1] !== '@'){
+    if ($content[count($content) - 1] !== '@') {
         return false;
     }
     $result = [];
-    foreach ($content as $item){
-        if ($item !== '@'){
-            $result[] = mb_convert_encoding($item, "UTF-8","CP866");
+    foreach ($content as $item) {
+        if ($item !== '@') {
+            $result[] = mb_convert_encoding($item, "UTF-8", "CP866");
         }
     }
     unlink('from_pc.txt');
     return $result;
 }
+
 function array_to_lover(&$item1, $key)
 {
     $item1 = strtolower($item1);
 }
 
+//function ping($host, $port, $timeout) {
+//Echoing it will display the ping if the host is up, if not it'll say "down".
+//    $tB = microtime(true);
+//    $fP = fSockOpen($host, $port, $errno, $errstr, $timeout);
+//    if (!$fP) { return "down"; }
+//    $tA = microtime(true);
+//    return round((($tA - $tB) * 1000), 0)." ms";
+//}
 // наш обработчик ошибок
-function myHandler($level, $message, $file, $line, $context) {
-
+function myHandler($level, $message, $file, $line, $context)
+{
+    //global $filelog;
+    //echo '1';
+    // в зависимости от типа ошибки формируем заголовок сообщения
+//    switch ($level) {
+//        case E_WARNING:
+//            $type = 'Warning';
+//            break;
+//        case E_NOTICE:
+//            $type = 'Notice';
+//            break;
+//            default;
+//            // это не E_WARNING и не E_NOTICE
+//            // значит мы прекращаем обработку ошибки
+//            // далее обработка ложится на сам PHP
+//            return false;
+//    }
     // выводим текст ошибки  в лог
-    $data = " ** ".getErrorForCode($level).": $message ".PHP_EOL;
+    $data = " ** " . getErrorForCode($level) . ": $message " . PHP_EOL;
     //$data .= " ** File: $file:$line".PHP_EOL;
-    $data .= ' ** '. date('d m Y H:i:s') . PHP_EOL;
+    $data .= ' ** ' . date('d m Y H:i:s') . PHP_EOL;
     saveToLog($data);
     // сообщаем, что мы обработали ошибку, и дальнейшая обработка не требуется - return true
-    return true;
+    return true; // передаем на обработку php
 }
+
 /*
     * функции перевода смс в транслит
     */
@@ -172,19 +221,135 @@ function myHandler($level, $message, $file, $line, $context) {
 function sms_translit($str)
 {
     $translit = array(
-        "А"=>"A","Б"=>"B","В"=>"V","Г"=>"G",
-        "Д"=>"D","Е"=>"E","Ж"=>"J","З"=>"Z","И"=>"I",
-        "Й"=>"Y","К"=>"K","Л"=>"L","М"=>"M","Н"=>"N",
-        "О"=>"O","П"=>"P","Р"=>"R","С"=>"S","Т"=>"T",
-        "У"=>"U","Ф"=>"F","Х"=>"H","Ц"=>"TS","Ч"=>"CH",
-        "Ш"=>"SH","Щ"=>"SCH","Ъ"=>"","Ы"=>"YI","Ь"=>"",
-        "Э"=>"E","Ю"=>"YU","Я"=>"YA","а"=>"a","б"=>"b",
-        "в"=>"v","г"=>"g","д"=>"d","е"=>"e","ж"=>"j",
-        "з"=>"z","и"=>"i","й"=>"y","к"=>"k","л"=>"l",
-        "м"=>"m","н"=>"n","о"=>"o","п"=>"p","р"=>"r",
-        "с"=>"s","т"=>"t","у"=>"u","ф"=>"f","х"=>"h",
-        "ц"=>"ts","ч"=>"ch","ш"=>"sh","щ"=>"sch","ъ"=>"y",
-        "ы"=>"yi","ь"=>"","э"=>"e","ю"=>"yu","я"=>"ya"
+        "А" => "A", "Б" => "B", "В" => "V", "Г" => "G",
+        "Д" => "D", "Е" => "E", "Ж" => "J", "З" => "Z", "И" => "I",
+        "Й" => "Y", "К" => "K", "Л" => "L", "М" => "M", "Н" => "N",
+        "О" => "O", "П" => "P", "Р" => "R", "С" => "S", "Т" => "T",
+        "У" => "U", "Ф" => "F", "Х" => "H", "Ц" => "TS", "Ч" => "CH",
+        "Ш" => "SH", "Щ" => "SCH", "Ъ" => "", "Ы" => "YI", "Ь" => "",
+        "Э" => "E", "Ю" => "YU", "Я" => "YA", "а" => "a", "б" => "b",
+        "в" => "v", "г" => "g", "д" => "d", "е" => "e", "ж" => "j",
+        "з" => "z", "и" => "i", "й" => "y", "к" => "k", "л" => "l",
+        "м" => "m", "н" => "n", "о" => "o", "п" => "p", "р" => "r",
+        "с" => "s", "т" => "t", "у" => "u", "ф" => "f", "х" => "h",
+        "ц" => "ts", "ч" => "ch", "ш" => "sh", "щ" => "sch", "ъ" => "y",
+        "ы" => "yi", "ь" => "", "э" => "e", "ю" => "yu", "я" => "ya"
     );
-    return strtr($str,$translit);
+    return strtr($str, $translit);
+}
+
+function deleteFiles($folder)
+{
+    global $filesUnlink;
+    foreach ($folder['files'] as $file) {
+        $nameFile = $folder['name_folder'] . $file;
+        $result = unlink($nameFile);
+
+        $key = array_search($nameFile, $filesUnlink);
+        if (!$result) {
+            if ($key === false) {
+                // внести в масив помилково не зтертих
+                $filesUnlink[] = $nameFile;
+                $textError = 'Помилка видалення файлу ' . $nameFile;
+                // ----- повідомимо на megalog ------- //
+                $toSend = [
+                    'result' => 0,
+                    'files' => $folder['files'],
+                    'error' => $textError,
+                    'category_id' => 4,  // нова категорія Помилка видалення файлу
+                    'alias' => $folder['alias'],
+                    'station_id' => STATION,
+                    'login' => 'voldiner@ukr.net',
+                    'password' => '%NVBw2I/pSLkcCq>?',
+                ];
+                megalog($toSend);
+            }
+        } else {
+            if ($key !== false) {
+                // якщо є в масиві помилково не стертих, то почистити
+                unset($filesUnlink[$key]);
+            }
+        }
+
+    }
+}
+
+/**
+ *  дає дозвіл на запуск скрипту
+ */
+function check_pid()
+{
+    if (!file_exists('pid.txt')) {
+        file_put_contents('pid.txt', time());
+        open_exclusive_pid();
+        return true;
+    } else {
+
+        if (!open_exclusive_pid()) {
+            return false;
+        }
+        return true;
+    }
+}
+
+
+/**
+ *
+ * спроба відкрити файл в виключному режимі
+ * @return true   якщо вдалося
+ */
+function open_exclusive_pid()
+{
+    global $fp;
+    if (!file_exists('pid.txt')) {
+        return false;
+    }
+    $fp = fopen("pid.txt", "r+");
+    $result = flock($fp, LOCK_EX);  // выполняем эксклюзивную блокировку
+
+    return $result;
+}
+
+function close_pid()
+{
+    global  $fp;
+    fflush ($fp);//ОЧИЩЕНИЕ ФАЙЛОВОГО БУФЕРА И ЗАПИСЬ В ФАЙЛ
+    flock ($fp,LOCK_UN);//СНЯТИЕ БЛОКИРОВКИ
+    fclose ($fp);//закрытие
+}
+
+function update_pid()
+{
+    global  $fp;
+    ftruncate($fp, 0);
+    fseek($fp,0);
+    fwrite($fp ,time());
+    fflush ($fp);//ОЧИЩЕНИЕ ФАЙЛОВОГО БУФЕРА И ЗАПИСЬ В ФАЙЛ
+
+}
+/**
+ * send http request to  https://vopas.com.ua/fastCanceled.php
+ * @param string
+ * @return  boolean | string
+ */
+function send_request_zriv($url)
+{
+    $curlZriv = curl_init();
+    curl_setopt($curlZriv, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curlZriv, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($curlZriv, CURLOPT_URL, $url );
+
+    $ret_curl = curl_exec($curlZriv);
+    curl_close($curlZriv);
+//    print_r($ret_curl);
+//    exit();
+    if (trim($ret_curl) == 'Fast canceled completed!'){
+        $result = true;
+    }elseif (strlen(trim($ret_curl))>0){
+        $result = trim($ret_curl);
+    }else{
+        $result = false;
+    }
+
+    return $result;
 }

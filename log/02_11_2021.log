@@ -1,0 +1,85 @@
+process starting ...02 11 2021 10:09:57
+
+process shutdown manually...02 11 2021 10:10:49
+
+process starting ...02 11 2021 10:11:56
+
+process shutdown manually...02 11 2021 10:12:18
+
+process starting ...02 11 2021 10:12:36
+
+ ** process shutdown error...
+ ** ERROR: Maximum execution time of 60 seconds exceeded 
+ ** File: E:\OSPanel\domains\uploader\index.php:223
+ ** 02 11 2021 10:13:36
+
+process starting ...02 11 2021 10:14:38
+
+Невідома помилка запуску скрипта http://uploader:81/sendMail.php  02 11 2021 10:14:50
+Невідома помилка запуску скрипта http://uploader:81/sendMail.php  02 11 2021 10:19:05
+process shutdown manually...02 11 2021 10:21:41
+
+process starting ...02 11 2021 10:23:46
+
+process shutdown manually...02 11 2021 10:23:48
+
+process starting ...02 11 2021 10:24:11
+
+Невідома помилка запуску скрипта http://uploader:81/sendMail.php  02 11 2021 10:24:13
+process shutdown manually...02 11 2021 10:24:30
+
+process starting ...02 11 2021 10:24:48
+
+process shutdown manually...02 11 2021 10:25:00
+
+process starting ...02 11 2021 10:27:16
+
+process shutdown manually...02 11 2021 10:27:18
+
+process starting ...02 11 2021 10:28:11
+
+process shutdown manually...02 11 2021 10:28:14
+
+process starting ...02 11 2021 10:30:12
+
+ ** NOTICE: Undefined variable: result 
+ ** 02 11 2021 10:30:15
+
+ ** NOTICE: Undefined variable: result 
+ ** 02 11 2021 10:30:15
+
+Успішний запуск скрипта http://uploader:81/sendMail.php 02 11 2021 10:30:15
+ ** NOTICE: Undefined variable: result 
+ ** 02 11 2021 10:30:58
+
+ ** NOTICE: Undefined variable: result 
+ ** 02 11 2021 10:30:58
+
+Успішний запуск скрипта http://uploader:81/sendMail.php 02 11 2021 10:30:58
+ ** process shutdown error...
+ ** ERROR: Maximum execution time of 60 seconds exceeded 
+ ** File: E:\OSPanel\domains\uploader\index.php:223
+ ** 02 11 2021 10:31:12
+
+process starting ...02 11 2021 10:32:48
+
+ ** NOTICE: Undefined variable: result 
+ ** 02 11 2021 10:32:57
+
+ ** NOTICE: Undefined variable: result 
+ ** 02 11 2021 10:32:57
+
+Успішний запуск скрипта http://uploader:81/sendMail.php 02 11 2021 10:32:57
+process shutdown manually...02 11 2021 10:36:30
+
+process starting ...02 11 2021 10:39:22
+
+ ** NOTICE: Undefined variable: result 
+ ** 02 11 2021 10:39:41
+
+ ** NOTICE: Undefined variable: result 
+ ** 02 11 2021 10:39:41
+
+Успішний запуск скрипта http://uploader:81/sendMail.php 02 11 2021 10:39:41
+process shutdown manually...02 11 2021 10:53:05
+

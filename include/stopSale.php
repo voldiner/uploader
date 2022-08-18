@@ -10,6 +10,7 @@ curl_setopt($curlMail, CURLOPT_POSTFIELDS, $toPostParam);
 $ret_curl = curl_exec($curlMail);
 
 curl_close($curlMail);
+
 if ($ret_curl === false){
     $result = $ret_curl;
 }else{

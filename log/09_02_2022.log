@@ -1,0 +1,14 @@
+process starting ...09 02 2022 17:11:52
+
+ ** NOTICE: Undefined variable: result 
+ ** 09 02 2022 17:12:00
+
+ ** NOTICE: Undefined variable: result 
+ ** 09 02 2022 17:12:00
+
+Успішний запуск скрипта https://vopas.com.ua/fastCanceled.php 09 02 2022 17:12:00
+ ** process shutdown error...
+ ** ERROR: Maximum execution time of 60 seconds exceeded 
+ ** File: E:\OSPanel\domains\uploader\index.php:249
+ ** 09 02 2022 17:12:53
+
